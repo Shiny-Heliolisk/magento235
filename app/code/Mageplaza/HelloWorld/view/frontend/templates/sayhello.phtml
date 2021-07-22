@@ -1,0 +1,35 @@
+
+<style>
+table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+tr:nth-child(even) { background-color: #dddddd; }
+.post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+<a href="#" style="margin-top:30px; padding: 10px 15px; background-color: #218838; color:white; text-decoration:none; border-radius:10px 10px">+ Add new</a>
+
+<table>
+  <tr>
+    <th class="post-id">Id</th>
+    <th class="post-name">Name</th>
+    <th>Content</th>
+    <th>Action</th>
+  </tr>
+    <?php
+        foreach ($block->getPostCollection() as $key=>$post){
+            echo '<tr>
+                    <td>'.$post->getPostId().'</td>
+                    <td>'.$post->getName().'</td>
+                    <td>'.$post->getPostContent().'</td>
+                    <td>
+                    <a href="#" style="padding: 10px 15px; background-color: #007bff; color:white; text-decoration:none; border-radius:10px 10px">Edit</a>
+                    <a href="#" style="padding: 10px 15px; background-color: #c82333; color:white; text-decoration:none; border-radius:10px 10px">Delete</a>
+                    </td>
+                  </tr>';
+        }
+    ?>
+</table>
+
+</body>
+</html>
